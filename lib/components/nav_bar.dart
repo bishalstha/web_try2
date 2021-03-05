@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:web_try2/components/nav_bar_right_button.dart';
 
 class NavBarText extends StatelessWidget {
@@ -14,7 +15,7 @@ class NavBarText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double imageSize = 40;
+    const double imageSize = 40;
     final Color color = isActive ? Colors.redAccent : Colors.grey;
     return Padding(
       padding: const EdgeInsets.only(
@@ -68,7 +69,7 @@ class NavBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 50),
       height: 80,
-      color: const Color(0xFFF0F0F0),
+      color: Colors.white,
       child: Row(
         children: [
           SizedBox(
@@ -104,7 +105,7 @@ class NavBar extends StatelessWidget {
   Widget _navForSmallScreen() {
     return Container(
       padding: const EdgeInsets.only(top: 10),
-      color: const Color(0xFFF0F0F0),
+      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
