@@ -11,7 +11,7 @@ class ProgressBar extends StatelessWidget {
     this.height = 10,
     this.tint = const Color(0xFFA4CA3F),
     this.backgroundColor = const Color(0xFFEAEAEA),
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

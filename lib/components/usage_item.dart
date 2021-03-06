@@ -4,12 +4,12 @@ class UsageItem extends StatelessWidget {
   final String imageAsset;
   final String title;
   final String subtitle;
-  final Widget child;
+  final Widget? child;
 
   const UsageItem({
-    @required this.imageAsset,
-    @required this.title,
-    @required this.subtitle,
+    required this.imageAsset,
+    required this.title,
+    required this.subtitle,
     this.child,
   });
 
@@ -27,7 +27,7 @@ class UsageItem extends StatelessWidget {
           child: Column(
             children: [
               _top(),
-              if (child != null) child,
+              if (child != null) child!,
             ],
           ),
         ),

@@ -8,8 +8,8 @@ class NavBarText extends StatelessWidget {
   final bool isActive;
 
   NavBarText({
-    @required this.title,
-    @required this.imageAsset,
+    required this.title,
+    required this.imageAsset,
     this.isActive = false,
   });
 
