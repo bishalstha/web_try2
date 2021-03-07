@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:web_try2/components/info_usage.dart';
+import 'package:web_try2/components/sims_info.dart';
 
 class AccountBody extends StatelessWidget {
   @override
@@ -11,6 +12,7 @@ class AccountBody extends StatelessWidget {
         horizontal: 50,
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             flex: 2,
@@ -19,7 +21,7 @@ class AccountBody extends StatelessWidget {
           const SizedBox(width: 50),
           Expanded(
             flex: 1,
-            child: const Text('Test'),
+            child: SimsInfo(),
           ),
         ],
       ),
