@@ -68,17 +68,9 @@ class InfoUsage extends StatelessWidget {
         children: [
           _item1(),
           _itemDivider(),
-          UsageItem(
-            imageAsset: 'assets/images/phone.png',
-            title: '0 \$',
-            subtitle: 'Calls and messages',
-          ),
+          _item2(),
           _itemDivider(),
-          UsageItem(
-            imageAsset: 'assets/images/pay.png',
-            title: '0 \$',
-            subtitle: 'Additional paid services',
-          ),
+          _item3(),
         ],
       ),
     );
@@ -122,7 +114,7 @@ class InfoUsage extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               const Text(
                 '4 GB',
                 style: TextStyle(
@@ -157,6 +149,64 @@ class InfoUsage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  UsageItem _item2() {
+    return UsageItem(
+      imageAsset: 'assets/images/phone.png',
+      title: '0 \$',
+      subtitle: 'Calls and messages',
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 30),
+          _item2And3MessageBuilder('Calls', '0 min'),
+          const SizedBox(height: 5),
+          _item2And3MessageBuilder('Messages', '0 msgs'),
+        ],
+      ),
+    );
+  }
+
+  UsageItem _item3() {
+    return UsageItem(
+      imageAsset: 'assets/images/pay.png',
+      title: '0 \$',
+      subtitle: 'Additional paid services',
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 30),
+          _item2And3MessageBuilder('Service Calls', '0 \$'),
+          const SizedBox(height: 5),
+          _item2And3MessageBuilder('Service Messages', '0 \$'),
+          const SizedBox(height: 5),
+          _item2And3MessageBuilder('App Payments', '0 \$'),
+          const SizedBox(height: 5),
+          _item2And3MessageBuilder('Roaming Payments', '0 \$'),
+        ],
+      ),
+    );
+  }
+
+  Row _item2And3MessageBuilder(String title, String message) {
+    const textStyle = const TextStyle(
+      color: Colors.grey,
+      fontSize: 13,
+    );
+    return Row(
+      children: [
+        Text(
+          title,
+          style: textStyle,
+        ),
+        const Spacer(),
+        Text(
+          message,
+          style: textStyle,
+        ),
+      ],
     );
   }
 

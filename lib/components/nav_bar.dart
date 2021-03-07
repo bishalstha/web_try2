@@ -17,39 +17,41 @@ class NavBarText extends StatelessWidget {
   Widget build(BuildContext context) {
     const double imageSize = 40;
     final Color color = isActive ? Colors.redAccent : Colors.grey;
-    return Padding(
-      padding: const EdgeInsets.only(
-        top: 10,
-        left: 20,
-        right: 20,
-      ),
-      child: Column(
-        children: [
-          const Spacer(),
-          Container(
-            padding: const EdgeInsets.only(bottom: 5),
-            width: imageSize,
-            height: imageSize,
-            child: Image(
-              image: AssetImage(imageAsset),
-              color: color,
-            ),
-          ),
-          Text(
-            title,
-            style: TextStyle(
-              color: color,
-              fontSize: 15,
-            ),
-          ),
-          const Spacer(),
-          if (isActive)
+    return IntrinsicWidth(
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: 10,
+          left: 20,
+          right: 20,
+        ),
+        child: Column(
+          children: [
+            const Spacer(),
             Container(
-              width: 75,
-              height: 4,
-              color: color,
+              padding: const EdgeInsets.only(bottom: 5),
+              width: imageSize,
+              height: imageSize,
+              child: Image(
+                image: AssetImage(imageAsset),
+                color: color,
+              ),
             ),
-        ],
+            Text(
+              title,
+              style: TextStyle(
+                color: color,
+                fontSize: 15,
+              ),
+            ),
+            const Spacer(),
+            if (isActive)
+              Container(
+                width: double.infinity,
+                height: 4,
+                color: color,
+              ),
+          ],
+        ),
       ),
     );
   }
